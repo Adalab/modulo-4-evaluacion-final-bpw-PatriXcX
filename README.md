@@ -31,7 +31,7 @@ Instalar dependencias:
 
 Inicia el servidor con el siguiente comando:
 
-node src/index.js
+node --watch indes.js
 npm run dev
 Asegúrate de enviar las solicitudes a http://localhost:4000.
 
