@@ -32,7 +32,7 @@ app.listen(port, () => {
 // GET    /api/magas?order=nombre        --> [{},{}]
 // GET    /api/magas?incluir_varita=true --> [{},{}]
 
-app.get("/api/music", async (req, res) => {
+app.get("/api/bands", async (req, res) => {
   // Obtener conn con MySQL
   const conn = await getConnection();
 
@@ -57,7 +57,7 @@ app.get("/api/music", async (req, res) => {
 
 //Post insertar campos
 
-app.post("/api/music", async (req, res) => {
+app.post("/api/bands", async (req, res) => {
   console.log(req.body);
   //Obtener la conn
   const conn = await getConnection();
@@ -81,7 +81,7 @@ app.post("/api/music", async (req, res) => {
     ]
   );
 
-  //REspuest Json
+  //Respuesta Json
 
   if (results.affectedRows === 1) {
     res.json({ success: true, id: results.insertId });
@@ -90,5 +90,65 @@ app.post("/api/music", async (req, res) => {
   }
 
   //Cerrar conexión
+  await conn.close();
+});
+
+//PUT
+
+app.put("/api/bands/:id", async (req, res) => {
+  console.log(req.params, req.body);
+  const conn = await getConnection();
+  if (!conn) {
+    res.status(500).json({ success: false, error: "Error con la conexion." });
+    return;
+  }
+  const [results] = await conn.execute(
+    `
+      UPDATE bands
+      SET Name=?, City=?, Genre=?, Albums=?, Active=?
+      WHERE idBands =?`,
+    [
+      req.body.Name,
+      req.body.City,
+      req.body.Genre,
+      req.body.Albums,
+      req.body.Active,
+      req.params.id,
+    ]
+  );
+  console.log(results);
+  if (results.changedRows === 0) {
+    res.json({ success: false });
+  } else {
+    res.json({ success: true });
+  }
+  await conn.close();
+});
+
+//DELETE
+
+app.delete("/api/bands/:id", async (req, res) => {
+  console.log(req.params, req.body);
+  const conn = await getConnection();
+
+  if (!conn) {
+    res.status(500).json({ success: false, error: "Error con la conexion." });
+    return;
+  }
+
+  const [results] = await conn.execute(
+    `
+      DELETE FROM bands
+      WHERE idBands =?`,
+    [req.params.id]
+  );
+
+  console.log(results);
+
+  if (results.changedRows === 0) {
+    res.json({ success: false });
+  } else {
+    res.json({ success: true });
+  }
   await conn.close();
 });
