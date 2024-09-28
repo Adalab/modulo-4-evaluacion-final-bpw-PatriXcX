@@ -15,26 +15,68 @@ Eliminar bandas de la base de datos cuando ya no sean relevantes.
 
 Esta aplicación está construida usando las siguientes tecnologías:
 
-Node.js: Como entorno de ejecución para JavaScript del lado del servidor.
-Express: Framework de Node.js que permite crear aplicaciones web y APIs de manera sencilla y rápida.
-MySQL2: Librería de Node.js que permite la conexión y ejecución de consultas SQL.
-javaScript: JavaScript como  lenguaje principal de programación de Express.
-Postman: Herramienta usada para probar las rutas del API y validar las operaciones CRUD.
+   Node.js: Como entorno de ejecución para JavaScript del lado del servidor.
+
+   Express: Framework de Node.js que permite crear aplicaciones web y APIs de manera sencilla y rápida.
+
+   MySQL2: Librería de Node.js que permite la conexión y ejecución de consultas SQL.
+
+   JavaScript: JavaScript como  lenguaje principal de programación de Express.
+
+   Postman: Herramienta usada para probar las rutas del API y validar las operaciones CRUD.
 
 ## 🚀 Cómo usar esta aplicación
 
-Configurar la base de datos: Asegúrate de tener MySQL instalado y crea una base de datos. Tienes un ejemplo en el archivo del repositorio SQL_export. Puedes ajustar la configuración de la base de datos en un archivo .env para que coincida con tu entorno.
+1. Configura la base de datos: Asegúrate de tener MySQL instalado y crea una base de datos. Tienes un ejemplo en el archivo del repositorio SQL_export. Puedes ajustar la configuración de la base de datos en un archivo .env para que coincida con tu entorno.
 
-Clona el repositorio.
+2. Clona el repositorio.
 
-Instalar dependencias: 
+3. Instala las dependencias: 
 
-Inicia el servidor con el siguiente comando:
+   Inicia el servidor con el comando npm run dev.
 
-node --watch indes.js
-npm run dev
-Asegúrate de enviar las solicitudes a http://localhost:4000.
+4. Asegúrate de enviar las solicitudes a http://localhost:4000.
 
+
+5. Para el testeo y monitoreo de API 's  recomendamos la herramienta Postman. Peticiones HTTP a nuestra API =>
+
+  * Mostrar Info (GET):
+    
+     Selecciona el método get en el desplegable y añade la ruta http://localhost:4000/api/bands
+
+  * Crear un nuevo registro en el servidor (POST):
+    
+
+     Selecciona método POST  en el desplegable y añade la ruta http://localhost:4000/api/bands
+
+
+       Objeto a enviar:
+       {
+        "Name": "AIC",
+        "City": "Reus",
+        "Genre": "Grunge",
+        "Albums": 5,
+        "Active": false
+       }
+
+  * Modificar datos (PUT):
+
+
+    Selecciona método PUT en el desplegable y añade la ruta http://localhost:4000/api/bands/:id
+
+    Objeto a enviar:
+      {
+       "Name": "AIC",
+       "City": "Reus",
+       "Genre": "Grunge",
+       "Albums": 5,
+       "Active": false
+      }
+      
+* Borrar datos (DELETE):
+  
+
+  Selecciona método delete en el desplegable y añade la ruta http://localhost:4000/api/bands/:id
 
 
 
@@ -42,7 +84,7 @@ Asegúrate de enviar las solicitudes a http://localhost:4000.
 Este proyecto me ha permitido aprender y reforzar mis conocimientos en:
 
 Node.js y cómo crear un servidor utilizando Express.
-Cómo hacer consultas SQL a una base de datos MySQL desde una aplicación Node.js usando MySQL2.
+Cómo hacer consultas a una base de datos MySQL desde una aplicación Node.js usando MySQL2.
 El manejo de rutas REST para una API.
 Gestión de errores en el servidor y buenas prácticas en el manejo de respuestas JSON.
 Cómo conectar y desconectar de manera eficiente una base de datos en un entorno asíncrono.
