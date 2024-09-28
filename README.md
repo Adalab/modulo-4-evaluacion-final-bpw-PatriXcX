@@ -7,10 +7,12 @@ Esta aplicación gestiona información sobre bandas musicales. Con ella puedes:
 
 Crear nuevas bandas musicales, incluyendo detalles como nombre, ciudad, género, número de álbumes y estado de actividad.
 Leer la lista de todas las bandas almacenadas en la base de datos.
+Relacionar datos de las bandas procedentes de las fiferentes tablas contenedoras de información.
 Actualizar información existente sobre una banda.
 Eliminar bandas de la base de datos cuando ya no sean relevantes.
 
 🔧 Tecnologías usadas
+
 Esta aplicación está construida usando las siguientes tecnologías:
 
 Node.js: Como entorno de ejecución para JavaScript del lado del servidor.
@@ -20,22 +22,17 @@ javaScript: Para elaborar ficheros exportables para obtener un código más limp
 Postman: Herramienta usada para probar las rutas del API y validar las operaciones CRUD.
 
 🚀 Cómo usar esta aplicación
-Instalar dependencias: Clona el repositorio y ejecuta el siguiente comando para instalar las dependencias necesarias:
 
+Configurar la base de datos: Asegúrate de tener MySQL2 instalado y crea una base de datos. Puedes ajustar la configuración de la base de datos en un archivo .env para que coincida con tu entorno.
+Instalar dependencias: Clona el repositorio.
 
-Configurar la base de datos: Asegúrate de tener MySQL instalado y crea una base de datos. Puedes ajustar la configuración de la base de datos en un archivo .env para que coincida con tu entorno.
-
-Correr la aplicación: Inicia el servidor con el siguiente comando:
-
-bash
-Copiar código
+Inicia el servidor con el siguiente comando:
 node src/index.js
-O si estás en modo desarrollo:
+Asegúrate de enviar las solicitudes a http://localhost:4000.
 
-bash
-Copiar código
-nodemon src/index.js
-Probar las rutas: Puedes utilizar Postman para interactuar con las rutas de la API (crear, leer, actualizar, eliminar bandas musicales). Asegúrate de enviar las solicitudes a http://localhost:4000.
+EXPRESS:
+Importar bibliotectas, crear variables, configurar express, conectarse a mysql, arrancar servidor, crear endpoints API.
+
 
 🌱 ¿Qué he aprendido?
 Este proyecto me ha permitido aprender y reforzar mis conocimientos en:
