@@ -16,8 +16,6 @@ const port = 4000;
 app.use(cors());
 app.use(express.json({ limit: "25mb" }));
 
-// prueba getConnection
-
 // ARRANCAR EL SERVIDOR
 
 app.listen(port, () => {
@@ -25,12 +23,6 @@ app.listen(port, () => {
 });
 
 // ENDPOINTS API
-
-// maga = {id:1, nombre:"", expecialidad:"", lealtad:"", maestria:"", escuela_de_magia:""}
-// GET    /api/magas                 --> [{}, {}]
-// GET    /api/magas?search=Nombre       --> [{},{}]
-// GET    /api/magas?order=nombre        --> [{},{}]
-// GET    /api/magas?incluir_varita=true --> [{},{}]
 
 app.get("/api/bands", async (req, res) => {
   // Obtener conn con MySQL
