@@ -50,7 +50,7 @@ Esta aplicación está construida usando las siguientes tecnologías:
      Selecciona método POST  en el desplegable y añade la ruta http://localhost:4000/api/bands
 
 
-       Objeto a enviar:
+       Objeto a enviar en formato Json en el cuerpo de la petición::
        {
         "Name": "AIC",
         "City": "Reus",
@@ -62,9 +62,9 @@ Esta aplicación está construida usando las siguientes tecnologías:
   * Modificar datos (PUT):
 
 
-    Selecciona método PUT en el desplegable y añade la ruta http://localhost:4000/api/bands/:id
+    Selecciona método PUT en el desplegable y añade la ruta http://localhost:4000/api/bands/:id (donde id= dato a modificar)
 
-    Objeto a enviar:
+    Objeto a enviar en formato Json en el cuerpo de la petición:
       {
        "Name": "AIC",
        "City": "Reus",
@@ -76,7 +76,7 @@ Esta aplicación está construida usando las siguientes tecnologías:
 * Borrar datos (DELETE):
   
 
-  Selecciona método delete en el desplegable y añade la ruta http://localhost:4000/api/bands/:id
+  Selecciona método delete en el desplegable y añade la ruta http://localhost:4000/api/bands/:id (donde id= dato a eliminar)
 
 
 
